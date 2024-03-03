@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Dvdam\Events\Api\Data\EventsInterface" type="Dvdam\Events\Model\Events"/>
+    <preference for="Dvdam\Events\Api\EventsRepositoryInterface" type="Dvdam\Events\Model\Data\EventsRepository"/>
+    <preference for="Dvdam\Events\Api\EventsManagementInterface" type="Dvdam\Events\Model\Data\EventsManagement"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="dvdam_events_listing_data_source" xsi:type="string">Dvdam\Events\Model\ResourceModel\Events\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Dvdam\Events\Model\ResourceModel\Events\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">dvdam_events</argument>
+            <argument name="eventPrefix" xsi:type="string">dvdam_events_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">events_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Dvdam\Events\Model\ResourceModel\Events</argument>
+        </arguments>
+    </type>
+</config>

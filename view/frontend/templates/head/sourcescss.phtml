@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/**
+ * @var $block Template
+ * @var $escaper Escaper
+ */
+
+?>
+<link rel="preload" href="<?= $block->getViewFileUrl('Dvdam_Events::css/fcmain.min.css') ?>" type ="text/css" as="style" onload="this.onload=null; this.rel='stylesheet'"/>
+<link rel="preload" href="<?= $block->getViewFileUrl('Dvdam_Events::css/sweetalert2.min.css') ?>" type ="text/css" as="style" onload="this.onload=null; this.rel='stylesheet'"/>

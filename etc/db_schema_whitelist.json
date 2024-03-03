@@ -1,0 +1,21 @@
+{
+    "dvdam_events": {
+        "column": {
+            "event_id": true,
+            "title": true,
+            "content": true,
+            "label_type": true,
+            "start": true,
+            "end": true,
+            "created_at": true,
+            "updated_at": true,
+            "is_active": true
+        },
+        "index": {
+            "DVDAM_EVENTS_TITLE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

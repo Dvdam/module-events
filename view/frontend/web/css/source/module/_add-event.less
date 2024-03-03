@@ -1,0 +1,223 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .dvdamevents-index-index {
+
+        .m2fc-popup {
+            .m2fc-close-btn {
+                outline: none;
+                box-shadow: none;
+
+                &:active,
+                &:focus,
+                &:hover {
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                }
+
+            }
+
+            .m2fc-html-container {
+                box-sizing: border-box;
+                .content-swal {
+                    box-sizing: border-box;
+
+                    .form-group {
+                        box-sizing: border-box;
+                        width: 100%;
+                        text-align: center;
+                        margin: 1.5rem auto;
+                        position: relative;
+
+                        #title {
+                            .event-input;
+                            overflow: hidden;
+                            height: 42px;
+                            margin: 0;
+                            padding: 0.7813rem 0.7813rem;
+
+                            +.label {
+                                font-size: 1.6rem;
+                            }
+
+                            &::placeholder {
+                                font-size: 1.5rem;
+                                opacity: 0;
+                                transition: opacity 0.3s;
+                            }
+
+                            &:focus::placeholder {
+                                opacity: 1;
+                            }
+
+                            &:hover,
+                            &:focus {
+                                box-shadow: none;
+                                border-color: #666cff !important;
+                                border-width: 2px;
+                                outline: none;
+                            }
+
+                            &:focus + .label,
+                            &:not(:placeholder-shown) + .label,
+                            &:not(:placeholder-shown) ~ .label {
+                                font-size: 16px;
+                                height: auto;
+                                padding: 0 2px !important;
+                                width: auto !important;
+                                background: #fff;
+                                border-radius: 8px;
+                                margin-left: 12px !important;
+                                opacity: 1;
+                                transform: scale(0.8) translateY(-1.2rem) translateX(-2px);
+                            }
+                        }
+
+                        #desc {
+                            .event-input;
+                            overflow: hidden;
+                            height: 70px;
+
+                            &:hover,
+                            &:focus {
+                                box-shadow: none;
+                                border-color: #666cff !important;
+                                border-width: 2px;
+                            }
+                        }
+
+                        #desc + .label {
+                            .event-focus;
+                            color: #d8d8dd !important;
+                        }
+
+                        > .label {
+                            .event-label;
+                        }
+                    }
+
+                    #title:not([disabled]) {
+                        box-shadow: none;
+                    }
+
+                    #title::placeholder,
+                    #desc::placeholder {
+                        font-size: 1.5rem;
+                    }
+
+                    #title:focus + .label,
+                    #desc:focus-within + .label {
+                        .event-focus;
+                    }
+                }
+            }
+
+            .m2fc-actions {
+                button.m2fc-confirm-btn,
+                button.m2fc-cancel-btn {
+                    display: inline-flex !important;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    letter-spacing: 0.4px;
+                    box-shadow: 0 4px 8px -4px rgba(76, 78, 100, 0.42);
+                    border-radius: 8px;
+                    border: 1px solid transparent;
+                    height: 38px;
+                    padding: 8px 22px;
+                    width: 12rem;
+                    font-size: 1.3rem;
+                }
+
+                .m2fc-confirm-btn {
+                    color: #ffffff;
+                    background: rgba(90, 95, 224, .95);
+                    margin-right: 2rem;
+
+                    &:hover {
+                        background-color: #5a5fe0 !important;
+                        border-color: #5a5fe0 !important;
+                    }
+                }
+                .m2fc-cancel-btn {
+                    border-color: #b6bcc6 !important;
+                    color: #6d788d;
+                    background: transparent;
+
+                    &:hover {
+                        background-color: #e9ebee;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+//
+//  Custom mixins
+//  _____________________________________________
+.event-label {
+    border: 1px solid transparent;
+    cursor: default;
+    color: #828393;
+    display: inline-block;
+    font-weight: 400;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    padding: 12px;
+    pointer-events: none;
+    position: absolute;
+    text-align: start;
+    text-overflow: ellipsis;
+    top: 0;
+    transform-origin: 0 0;
+    transition: all .15s ease-in-out;
+    width: 90%;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.event-input {
+    appearance: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d8d8dd;
+    border-radius: 8px;
+    color: #636578;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 12px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.event-focus {
+    color: @color_checkout !important;
+    .event-focusbasic;
+}
+
+.event-focusbasic {
+    font-size: 16px;
+    font-weight: 400 !important;
+    height: auto !important;
+    margin-left: 12px !important;
+    opacity: 1;
+    transform: scale(0.8) translateY(-1.2rem) translateX(-2px);
+    padding: 0 2px !important;
+    width: auto !important;
+    background: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+}

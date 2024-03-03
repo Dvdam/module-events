@@ -1,0 +1,182 @@
+@import '_variables.less';
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .dvdamevents-index-index {
+
+        #loading {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #calendar {
+            max-width: 1100px;
+            margin: 0 auto;
+
+            .fc-timeGridWeek-view,
+            .fc-dayGridMonth-view {
+
+                .fc-scrollgrid {
+
+                    .fc-daygrid-event-dot,
+                    .fc-event-time {
+                        display: none !important;
+                    }
+
+                    .fc-event-title {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        .fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {
+            margin-right: 2px;
+        }
+
+        .fc-event-personal {
+            background-color: @event-type-color-personal !important;
+            color: #ffe4e4 !important;
+        }
+
+        .fc-event-business {
+            background-color: @event-type-color-business !important;
+            color: #def6fe !important;
+        }
+
+        .fc-event-family {
+            background-color: @event-type-color-family !important;
+            color: #fff4df !important;
+        }
+
+        .fc-event-holiday {
+            background-color: @event-type-color-holiday !important;
+            color: #eafbdf !important;
+        }
+
+        .fc-event-free {
+            background-color: @event-type-color-free !important;
+            color: #def6fe !important;
+        }
+
+        .personal {
+            background-color: @event-type-color-personal;
+        }
+
+        .business {
+            background-color: @event-type-color-business;
+        }
+
+        .family {
+            background-color: @event-type-color-family;
+        }
+
+        .holiday {
+            background-color: @event-type-color-holiday;
+        }
+
+        .free {
+            background-color: @event-type-color-free;
+        }
+
+        .swal2-shown {
+            overflow-y: auto !important;
+        }
+
+        .swal2-popup {
+            overflow: hidden;
+
+            .color-group {
+                margin-top: 10px;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+
+                input[type=radio] {
+                    display: none;
+                }
+
+                label {
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 100%;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    overflow: hidden;
+
+                    &:hover {
+                        span {
+                            transform: scale(1.25);
+                        }
+                    }
+
+                    span {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        transition: transform 0.2s ease-in-out;
+                        overflow: hidden;
+                    }
+                }
+
+                input[type="radio"]:checked + label {
+                    border: 3px solid #6e7881;
+                    width: 19px;
+                    height: 19px;
+                }
+
+                .active {
+                    input[type=radio]:checked + label {
+                        border: 3px solid #555 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .dvdamevents-index-index {
+        #calendar {
+            &.fc {
+                height: 48.7vh;
+
+                .fc-toolbar-chunk:has(.fc-toolbar-title) {
+                    padding: 5px;
+                    width: 30%;
+                }
+
+                .fc-toolbar-title {
+                    font-size: 1.1em;
+                    font-weight: 700;
+                    text-align: center;
+                }
+            }
+
+            .fc-timeGridWeek-view,
+            .fc-dayGridMonth-view {
+
+                .fc-scrollgrid {
+
+                    .fc-event-title {
+                        margin-left: 3px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+
+}

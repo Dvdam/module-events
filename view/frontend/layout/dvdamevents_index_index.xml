@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Dvdam_Events::js/lib/main.min.js" defer="true"/>
+        <remove src="mage/calendar.css"/>
+        <remove src="fonts/opensans/light/opensans-300.woff2"/>
+        <remove src="fonts/opensans/regular/opensans-400.woff2"/>
+        <remove src="fonts/opensans/semibold/opensans-600.woff2"/>
+        <remove src="fonts/opensans/bold/opensans-700.woff2"/>
+        <remove src="fonts/Luma-Icons.woff2"/>
+    </head>
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="dvdam.events.sourcescss"
+                   before="-"
+                   template="Dvdam_Events::head/sourcescss.phtml"/>
+        </referenceBlock>
+
+        <referenceBlock remove="true" name="dam.popup.popup"/>
+        <referenceBlock name="my-account-link" remove="true"/>
+        <referenceBlock name="register-link" remove="true"/>
+        <referenceBlock name="authorization-link" remove="true"/>
+        <referenceBlock name="customer.section.config" remove="true"/>
+        <referenceBlock name="customer.customer.data" remove="true"/>
+        <referenceBlock name="customer.data.invalidation.rules" remove="true"/>
+        <referenceBlock name="frontend-storage-manager" remove="true"/>
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="google.maps.api" remove="true"/>
+        <referenceBlock name="head.defer.images" remove="true"/>
+
+        <referenceBlock name="header.panel" remove="true"/>
+        <referenceBlock name="minicart" remove="true"/>
+        <referenceBlock name="header.menu" remove="true"/>
+        <referenceBlock name="header.wrapper.right" remove="true"/>
+        <referenceBlock name="footer-container" remove="true" />
+        <referenceBlock name="messages" remove="true"/>
+        <referenceBlock name="skip_to_content.target" remove="true"/>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <referenceContainer name="page.messages" remove="true"/>
+        <referenceBlock name="authentication-popup" remove="true"/>
+
+        <referenceContainer name="content">
+            <block name="dvdam.events.events"
+                   as="dvdam.events.events"
+                   cacheable="false"
+                   template="Dvdam_Events::events.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Dvdam\Events\ViewModel\Events</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

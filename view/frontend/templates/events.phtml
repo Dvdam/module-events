@@ -1,0 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Dvdam\Events\ViewModel\Events;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var Events $viewModel */
+
+$viewModel = $block->getData('view_model');
+?>
+
+<div class="container" data-mage-init='{"Dvdam_Events/js/events":{"events": "<?= $escaper->escapeJs($viewModel->getFormKey()) ?>"}}'>
+    <div id="loading">loading...</div>
+    <div id="calendar"></div>
+</div>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dvdam_Events::events"
+             title="Events"
+             translate="title"
+             module="Dvdam_Events"
+             sortOrder="20"
+             parent="Dvdam_Core::dvdam"
+             action="dvdam_events/events/index"
+             resource="Dvdam_Events::events"/>
+    </menu>
+</config>
